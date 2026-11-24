@@ -148,7 +148,6 @@ that.
 ## DATA
 
 [chrisjbillington/starship_telemetry](https://github.com/chrisjbillington/starship_telemetry)
-— telemetry region of the public launch broadcast, OCR'd at 10 fps. It is **not**
-official vehicle telemetry and carries OCR errors. The raw CSV is intentionally
+— telemetry region of the public launch broadcast, OCR'd at 10 fps. The raw CSV is intentionally
 not redistributed here; download it from the upstream repository and place it at
 `data/raw/telemetry-10fps.csv`.
