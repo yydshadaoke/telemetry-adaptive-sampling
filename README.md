@@ -7,7 +7,6 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/python-3.9%2B-blue" alt="python">
-  <img src="https://img.shields.io/badge/license-MIT-green" alt="license">
 </p>
 
 ---
@@ -72,8 +71,9 @@ Three properties make this harder than plain downsampling:
 ## METHOD
 
 <p align="center">
-  <img src="fig1_flowchart.png" width="440" alt="processing flow">
+  <img src="docs/figures/fig1_flowchart.png" width="440" alt="processing flow">
 </p>
+
 The whole pipeline lives in [`src/run_analysis.py`](src/run_analysis.py).
 
 **Step 1 — Clean and segment.** Drop fully-empty rows, index records by position
@@ -97,8 +97,6 @@ shared set and **add points** until all channels satisfy ε again.
 RMSE, entropy ratio and KL divergence — geometry and distribution checked
 separately.
 
-<br clear="right">
-
 ## RESULTS
 
 Public Starship launch telemetry, OCR'd from the broadcast overlay: 10 fps,
@@ -119,39 +117,19 @@ Loosening the bound to ε = 1 % drops the count to **127** records (5.59 %) at
 
 | | |
 |---|---|
-| <img src="fig2_segments_features.png" width="380"> | <img src="fig3_adaptive_subdivision.png" width="380"> |
+| <img src="docs/figures/fig2_segments_features.png" width="380"> | <img src="docs/figures/fig3_adaptive_subdivision.png" width="380"> |
 | Valid segments and key features | Adaptive subdivision at work |
-| <img src="fig4_union_refill.png" width="380"> | <img src="fig5_curve_vs_points.png" width="380"> |
+| <img src="docs/figures/fig4_union_refill.png" width="380"> | <img src="docs/figures/fig5_curve_vs_points.png" width="380"> |
 | Multi-channel union and re-fill | Original curve vs. retained points |
 
 <p align="center">
-  <img src="/fig6_retention_error.png" width="640"><br>
+  <img src="docs/figures/fig6_retention_error.png" width="640"><br>
   <sub>Retention vs. worst-case error. Every uniform-sampling point sits above the ε = 1 % line; adaptive sampling crosses it at 5.6 % retention.</sub>
 </p>
 
 Storage of the same cleaned set: CSV 40 097 B · Gzip CSV 10 385 B ·
 Parquet/Zstd 13 501 B. The 226-record sample is 3 858 B as CSV, 1 451 B gzipped
 (9.6 % / 3.6 % of the full cleaned CSV).
-
-## REPOSITORY STRUCTURE
-
-```
-telemetry-adaptive-sampling/
-├── src/run_analysis.py          # read → sample → score → report
-├── data/
-│   ├── raw/                     # not committed, see DATA
-│   └── processed/               # cleaned csv / gz / parquet (regenerable)
-├── results/
-│   ├── report.md                # generated experiment report
-│   ├── sampling_comparison.csv  # per-scheme metrics
-│   ├── storage_comparison.csv   # format benchmark
-│   ├── plots/                   # generated figures
-│   └── sampled/                 # sampled outputs per scheme
-├── figures/                # figures used in this README
-├── assets/fonts/                # bundled CJK font (SIL OFL 1.1)
-├── requirements.txt
-└── README.md
-```
 
 ## QUICK START
 
@@ -174,7 +152,3 @@ that.
 official vehicle telemetry and carries OCR errors. The raw CSV is intentionally
 not redistributed here; download it from the upstream repository and place it at
 `data/raw/telemetry-10fps.csv`.
-
-## LICENSE
-
-Code: MIT. Bundled font: SIL Open Font License 1.1 (`assets/fonts/OFL.txt`).
