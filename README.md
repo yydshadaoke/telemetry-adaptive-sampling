@@ -128,9 +128,9 @@ Loosening the bound to ε = 1 % drops the count to **127** records (5.59 %) at
   <sub>Retention vs. worst-case error. Every uniform-sampling point sits above the ε = 1 % line; adaptive sampling crosses it at 5.6 % retention.</sub>
 </p>
 
-Storage of the same cleaned set: CSV 40 097 B · Gzip CSV 10 385 B ·
-Parquet/Zstd 13 501 B. The 226-record sample is 3 858 B as CSV, 1 451 B gzipped
-(9.6 % / 3.6 % of the full cleaned CSV).
+Storage of the same cleaned set: CSV 40,097 B · Gzip CSV 10,385 B ·
+Parquet/Zstd 13,501 B. The 226-record sample is 3,858 B as CSV, 1,451 B gzipped
+(9.6% / 3.6% of the full cleaned CSV).
 
 ## QUICK START
 
