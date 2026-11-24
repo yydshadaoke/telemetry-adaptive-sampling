@@ -72,7 +72,7 @@ Three properties make this harder than plain downsampling:
 ## METHOD
 
 <p align="center">
-  <img src="docs/figures/fig1_flowchart.png" width="440" alt="processing flow">
+  <img src="fig1_flowchart.png" width="440" alt="processing flow">
 </p>
 The whole pipeline lives in [`src/run_analysis.py`](src/run_analysis.py).
 
@@ -119,13 +119,13 @@ Loosening the bound to ε = 1 % drops the count to **127** records (5.59 %) at
 
 | | |
 |---|---|
-| <img src="docs/figures/fig2_segments_features.png" width="380"> | <img src="docs/figures/fig3_adaptive_subdivision.png" width="380"> |
+| <img src="fig2_segments_features.png" width="380"> | <img src="fig3_adaptive_subdivision.png" width="380"> |
 | Valid segments and key features | Adaptive subdivision at work |
-| <img src="docs/figures/fig4_union_refill.png" width="380"> | <img src="docs/figures/fig5_curve_vs_points.png" width="380"> |
+| <img src="fig4_union_refill.png" width="380"> | <img src="fig5_curve_vs_points.png" width="380"> |
 | Multi-channel union and re-fill | Original curve vs. retained points |
 
 <p align="center">
-  <img src="docs/figures/fig6_retention_error.png" width="640"><br>
+  <img src="/fig6_retention_error.png" width="640"><br>
   <sub>Retention vs. worst-case error. Every uniform-sampling point sits above the ε = 1 % line; adaptive sampling crosses it at 5.6 % retention.</sub>
 </p>
 
@@ -147,7 +147,7 @@ telemetry-adaptive-sampling/
 │   ├── storage_comparison.csv   # format benchmark
 │   ├── plots/                   # generated figures
 │   └── sampled/                 # sampled outputs per scheme
-├── docs/figures/                # figures used in this README
+├── figures/                # figures used in this README
 ├── assets/fonts/                # bundled CJK font (SIL OFL 1.1)
 ├── requirements.txt
 └── README.md
