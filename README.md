@@ -24,7 +24,7 @@ Same data volume, **~24× lower worst-case error**. Get the same numbers on your
 
 ```bash
 python -m pip install -r requirements.txt
-python src/run_analysis.py
+python run_analysis.py
 ```
 
 ---
@@ -75,7 +75,7 @@ Three properties make this harder than plain downsampling:
   <img src="fig1_flowchart.png" width="440" alt="processing flow">
 </p>
 
-The whole pipeline lives in [`src/run_analysis.py`](src/run_analysis.py).
+The whole pipeline lives in [`run_analysis.py`](run_analysis.py).
 
 **Step 1 — Clean and segment.** Drop fully-empty rows, index records by position
 (the `t` column is rounded to whole seconds, so ten frames share one timestamp),
@@ -138,7 +138,7 @@ Parquet/Zstd 13,501 B. The 226-record sample is 3,858 B as CSV, 1,451 B gzipped
 git clone https://github.com/yydshadaoke/telemetry-adaptive-sampling.git
 cd telemetry-adaptive-sampling
 python -m pip install -r requirements.txt
-python src/run_analysis.py
+python run_analysis.py
 ```
 
 `numpy`, `scikit-learn` and `matplotlib` are required; `pyarrow` (Parquet) and
