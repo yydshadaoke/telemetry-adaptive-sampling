@@ -80,19 +80,19 @@ The whole pipeline lives in [`src/run_analysis.py`](src/run_analysis.py).
 **Step 1 — Clean and segment.** Drop fully-empty rows, index records by position
 (the `t` column is rounded to whole seconds, so ten frames share one timestamp),
 split each channel into contiguous valid segments, and compute each channel's
-range `R_c` for normalisation.
+range $R_c$ for normalisation.
 
 **Step 2 — Anchor on key features.** Take segment endpoints, local extrema
-(first-difference sign changes with a 0.005·R_c dead band) and global extrema as
-the initial anchor set.
+(first-difference sign changes with a $0.005\,R_c$ dead band) and global extrema
+as the initial anchor set.
 
 **Step 3 — Adaptive subdivision.** For every interval fit a chord, measure the
-normalised deviation `e_i = |y_i − ŷ_i| / R_c`, and if `max e_i > ε` split at the
-worst record and recurse on both halves.
+normalised deviation $e_i = \lvert y_i - \hat{y}_i \rvert / R_c$, and if
+$\max e_i > \varepsilon$ split at the worst record and recurse on both halves.
 
 **Step 4 — Merge channels and re-check.** Union all per-channel point sets.
 Because the union changes every channel's intervals, recompute the error on the
-shared set and **add points** until all channels satisfy ε again.
+shared set and **add points** until all channels satisfy $\varepsilon$ again.
 
 **Step 5 — Score the result.** Retention ratio, max normalised error, normalised
 RMSE, entropy ratio and KL divergence — geometry and distribution checked
