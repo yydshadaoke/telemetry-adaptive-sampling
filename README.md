@@ -8,7 +8,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/python-3.9%2B-blue" alt="python">
   <img src="https://img.shields.io/badge/license-MIT-green" alt="license">
-  <img src="https://img.shields.io/badge/result-24%C3%97%20lower%20error-brightgreen" alt="result">
 </p>
 
 ---
@@ -72,8 +71,9 @@ Three properties make this harder than plain downsampling:
 
 ## METHOD
 
-<img src="docs/figures/fig1_flowchart.png" width="420" align="right" alt="flow chart">
-
+<p align="center">
+  <img src="docs/figures/fig1_flowchart.png" width="440" alt="processing flow">
+</p>
 The whole pipeline lives in [`src/run_analysis.py`](src/run_analysis.py).
 
 **Step 1 — Clean and segment.** Drop fully-empty rows, index records by position
