@@ -1,0 +1,23 @@
+{
+  "sampled": [
+    "adaptive_eps_0p1pct",
+    "adaptive_eps_0p5pct",
+    "adaptive_eps_1pct",
+    "adaptive_eps_2pct",
+    "cluster_step_10",
+    "cluster_step_2",
+    "cluster_step_5",
+    "fixed_step_10",
+    "fixed_step_2",
+    "fixed_step_20",
+    "fixed_step_5"
+  ],
+  "plots": [
+    "cluster_segment_sampling",
+    "kmeans_cluster_scatter",
+    "sampling_tradeoff",
+    "storage_read_write_times",
+    "storage_sizes",
+    "telemetry_adaptive_1pct"
+  ]
+}
