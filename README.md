@@ -33,13 +33,14 @@ python src/run_analysis.py
 
 Flight telemetry is recorded at a fixed frame rate: every channel is sampled every
 frame, and every frame carries **all** channels at once. At 100 fps, 500 channels
-and 16 bit, ten minutes of flight is about
+and 16 bit, ten minutes of flight gives
 
-```
-B = fs · T · M · b = 100 × 600 × 500 × 16 ≈ 4.8 × 10⁸ bit  (≈ 60 MB, ≈ 800 kbit/s)
-```
+$$
+B = f_s \cdot T \cdot M \cdot b = 100 \times 600 \times 500 \times 16
+  \approx 4.8 \times 10^{8}\ \text{bit} \approx 60\ \text{MB} \approx 800\ \text{kbit/s}
+$$
 
-More than a narrow downlink can carry once other services share the band.
+which is more than a narrow downlink can carry once other services share the band.
 
 The usual answer is to keep every *n*-th record. It is trivial, it needs no model,
 and it is also why transient events get smoothed away — a uniform step does not
